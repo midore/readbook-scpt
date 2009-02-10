@@ -13,13 +13,13 @@ git clone git://github.com/midore/readbook
 
 # === setup
 # in your /Application/Terminal.app
-% vi pathto/readbook-scpt/readbook-run-scpt.rb
+% vi readbook-scpt/readbook-run-scpt.rb
 # edit line 1. shebung
-#!/path/to/your/ruby1.9.1/bin/ruby
+#!/pathto/ruby1.9.1/bin/ruby -E utf-8
 
-% chmod +x pathto/readbook-scpt/readbook-run-scpt.rb
-% mv pathto/readbook-scpt/readbook-run-scpt.rb  pathto/readbook-xx/bin
-% mv pathto/readbook-scpt/scpt/ pathto/readbook-xx/
+% chmod +x readbook-scpt/readbook-run-scpt.rb
+% mv readbook-scpt/readbook-run-scpt.rb  pathto/readbook-xx/bin/
+% mv readbook-scpt/scpt/ pathto/readbook-xx/
 
 # === .applescipt files of readbook-scpt
 % cd pathto/readbook-xx/scpt/
@@ -40,11 +40,9 @@ run_useaws.applescript
 # use: http://github.com/midore/compile-applescript
 
 # manual compile
-# MakeDirectory for .scpt Files.
-% mkdir pathto/readbook-xx/scpt
-
 # ALL .applescript Files Open
-% cd readbook-xx-scpt
+
+% cd readbook-xx/scpt
 % open *.applescript
 
 # in your /Application/AppleScript/ScriptEditor.app
@@ -65,6 +63,7 @@ run_useaws.applescript
 # === Run
 
 # Run file 'mine_main.scpt'
+
 % open pathto/readbook-xx/scpt/mine_main.scpt
 
 # in your /Application/AppleScript/ScriptEditor.app
@@ -75,14 +74,19 @@ run_useaws.applescript
 # === SetUP ScriptsMenue
 
 % open pathto/readbook-xx/scpt/mine_main.scpt
+
 # Save file 'mine_main.app' as application  ( save option format = application ) in pathto/readbook-xx/scpt/
-# Attention: must save to directory 'pathto/readbook-xx/scpt/'
+# Attention: must save to 'pathto/readbook-xx/scpt/mine_main.app'
 
 # in your Finder.app
 # select file 'pathto/readbook-xx/scpt/mine_main.app' 
 # command + L 
 # maked alias file (pathto/readbook-xx/scpt/mine_main.app.alias)
 # alias file move to ~/Library/Scripts/
+
+% ls ~/Library/Scripts
+# =>
+# mine_main.app.alias 
 
 # If Not exist ~/Library/Scripts Directory.
 % mkdir ~/Library/Scripts
@@ -93,14 +97,14 @@ run_useaws.applescript
 
 # === AppleScript Error.
 
-# if AppleSciptError is "sh: ./readbook-run.rb: Permission denied."
-% chmod +x pathto/readbook-xx/bin/readbook-run.rb
+# if AppleSciptError is "sh: ./readbook-run-scpt.rb: Permission denied."
+% chmod +x pathto/readbook-xx/bin/readbook-run-scpt.rb
 
 # if Error is " Error: sorry, i use ruby 1.9.1 "
 # You need install ruby 1.9.1 or
-% vi pathto/readbook-xx/bin/readbook-run.rb 
+% vi pathto/readbook-xx/bin/readbook-run-scpt.rb 
 # line 1 and line 2.
 # =>
- #!/pathto/your/ruby1.9.1/bin/ruby
+ #!/pathto/your/ruby1.9.1/bin/ruby -E utf-8
  # coding: utf-8 -*-
 
