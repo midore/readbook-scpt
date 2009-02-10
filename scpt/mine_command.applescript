@@ -26,35 +26,35 @@ script class_command
 	end runcommand
 	
 	to additem(ean)
-		";./readbook-run.rb as a " & "'" & ean & "'"
+		";./readbook-run-scpt.rb as a " & "'" & ean & "'"
 	end additem
 	
 	to listview()
-		";./readbook-run.rb as list 10 "
+		";./readbook-run-scpt.rb as list 10 "
 	end listview
 	
 	to listview_mod()
-		";./readbook-run.rb as last 10"
+		";./readbook-run-scpt.rb as last 10"
 	end listview_mod
 	
 	to search(w)
-		";./readbook-run.rb as s " & w
+		";./readbook-run-scpt.rb as s " & w
 	end search
 	
 	to update(ean)
-		";./readbook-run.rb as u " & ean
+		";./readbook-run-scpt.rb as u " & ean
 	end update
 	
 	to update_all()
-		";./readbook-run.rb as u all"
+		";./readbook-run-scpt.rb as u all"
 	end update_all
 	
 	to openitem(ean)
-		";./readbook-run.rb as a " & "'" & ean & "'"
+		";./readbook-run-scpt.rb as a " & "'" & ean & "'"
 	end openitem
 	
 	to mhelp()
-		#";./readbook-run.rb h"
+		#";./readbook-run-scpt.rb h"
 	end mhelp
 	
 end script
