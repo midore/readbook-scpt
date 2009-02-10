@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby19 -E utf-8 -E utf-8
+#!/usr/local/bin/ruby19 -E utf-8 
 # coding: utf-8
 
 $LOAD_PATH.delete(".")
@@ -10,4 +10,6 @@ ext = Encoding.default_external.name
 raise "Error, LANG must be UTF-8" unless ext == 'UTF-8'
 # start
 require 'readbook'
-ReadBook::Starter.start
+ReadBook::Starter.star
+
+

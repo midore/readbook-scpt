@@ -102,5 +102,5 @@ run_useaws.applescript
 # line 1 and line 2.
 # =>
  #!/pathto/your/ruby1.9.1/bin/ruby
- # -*- coding: utf-8 -*-
+ # coding: utf-8 -*-
 
