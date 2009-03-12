@@ -1,5 +1,4 @@
 scpt-for-readbook
---for readbook scpt--
 
 author: midorex@gmail.com
 URL: http://www.midore.net
@@ -106,5 +105,5 @@ run_useaws.applescript
 # line 1 and line 2.
 # =>
  #!/pathto/your/ruby1.9.1/bin/ruby -E utf-8
- # coding: utf-8 -*-
+ # coding: utf-8
 
