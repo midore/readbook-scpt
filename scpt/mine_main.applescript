@@ -34,7 +34,7 @@ script class_mymain
 			# you need to edit.
 			# example;
 			# Path of your readbook-0.3 is 
-			# /Users/home/xxx/yyy/ReadBook-0.2
+			# /Users/home/xxx/yyy/readbook-0.3
 			# edit this line and comment out.
 			# set dir_myapp to "startupdiskname:Users:yourname:xxx:yyy:readbook-0.3:"
 			
