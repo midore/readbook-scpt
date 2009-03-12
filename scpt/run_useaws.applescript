@@ -44,12 +44,6 @@ script class_awsdata
 			return
 		end if
 		
-		# get-res
-		#set ans to paragraph 1 of res
-		#set s to count of paragraphs of res
-		#set title to paragraph s of res
-		#display dialog res
-		
 		# res
 		if "Error" is in res then
 			end_of_error(d) # socket error or not exist ean.

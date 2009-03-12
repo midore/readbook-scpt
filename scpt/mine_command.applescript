@@ -1,7 +1,7 @@
 script class_command
 	
 	to my_bin_path(alias_dir)
-		"cd " & (POSIX path of alias_dir as text) & "bin"
+		"cd " & (POSIX path of alias_dir as text) & "bin" & ";./readbook-run-scpt.rb "
 	end my_bin_path
 	
 	to do_my_script(str)
@@ -26,35 +26,35 @@ script class_command
 	end runcommand
 	
 	to additem(ean)
-		";./readbook-run-scpt.rb as a " & "'" & ean & "'"
+		"as a " & "'" & ean & "'"
 	end additem
 	
 	to listview()
-		";./readbook-run-scpt.rb as list 10 "
+		"as list 10"
 	end listview
 	
 	to listview_mod()
-		";./readbook-run-scpt.rb as last 10"
+		"as last 10"
 	end listview_mod
 	
 	to search(w)
-		";./readbook-run-scpt.rb as s " & w
+		"as s " & w
 	end search
 	
 	to update(ean)
-		";./readbook-run-scpt.rb as u " & ean
+		"as u " & ean
 	end update
 	
 	to update_all()
-		";./readbook-run-scpt.rb as u all"
+		"as u all"
 	end update_all
 	
 	to openitem(ean)
-		";./readbook-run-scpt.rb as a " & "'" & ean & "'"
+		"as a " & "'" & ean & "'"
 	end openitem
 	
 	to mhelp()
-		#";./readbook-run-scpt.rb h"
+		"h"
 	end mhelp
 	
 end script

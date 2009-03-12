@@ -2,7 +2,7 @@ script class_search
 	
 	# dialog
 	to dialog_mine(mydia)
-		set str to "Enter KewWord and click OK"
+		set str to "Enter Keyword and click OK"
 		input_mydialog("SearchItem", str, {"Cancel", "OK"}, "ruby") of mydia
 	end dialog_mine
 	
@@ -50,7 +50,7 @@ script class_search
 		
 		# NOT User's Cancel
 		if selectitem is not false then
-			# OpenÅHget-EAN
+			# Open
 			set ean to diallog_openorupdate(selectitem, d)
 			# Open run
 			runcommand("open", ean, bda) of comm
@@ -59,4 +59,3 @@ script class_search
 	end runsearch
 	
 end script
-e

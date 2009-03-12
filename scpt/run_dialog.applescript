@@ -1,121 +1,60 @@
 script class_dialog
 	
-	# default dialog
+	# Default Dialog
 	to default_d(tit, mess, buts, ico)
-		try
-			#tell application "Finder"
-			#	activate
-			display dialog mess buttons buts default button 1 with title tit with icon note
-			return button returned of result
-			#end tell
-			
-		on error the error_message number the error_number
-			if the error_number is not -128 then
-				set the error_text to "Error: " & the error_number & ". " & the error_message
-				display dialog the error_text buttons {"Cancel"} default button 1
-			else
-				error number -128
-			end if
-		end try
+		display dialog mess buttons buts default button 1 with title tit with icon note
+		return button returned of result
 	end default_d
 	
-	# textedit.app dialog
+	# Textedit.app dialog
 	to default_d_editor(tit, mess, buts, ico)
-		try
-			tell application "TextEdit"
-				activate
-				display dialog mess buttons buts default button 1 with title tit with icon ico
-			end tell
-			
-		on error the error_message number the error_number
-			if the error_number is not -128 then
-				set the error_text to "Error: " & the error_number & ". " & the error_message
-				display dialog the error_text buttons {"Cancel"} default button 1
-			else
-				error number -128
-			end if
-		end try
+		tell application "TextEdit"
+			activate
+			display dialog mess buttons buts default button 1 with title tit with icon ico
+		end tell
 	end default_d_editor
 	
-	# cooose list dialog
+	# Choose List
 	to choose_mydialog(ary)
-		
-		#try
-		#tell application "Finder"
-		#	activate
-		set choice to (choose from list ary with title "Choose the Item") #buttons {"OK"}
+		set choice to (choose from list ary with title "Choose the Item")
 		if choice is false then
-			display dialog "User's Cancel" buttons {"Cancel"} default button 1 giving up after 1
+			display dialog "User's Cancel" buttons {"See you..."} default button 1 giving up after 2 with title "stop"
 			return false
 		else
 			return choice
 		end if
-		#end tell
-		
-		#on error the error_message number the error_number
-		#	if error_number is -50 then
-		#		return "listempty"
-		#	else if the error_number is not -128 then
-		#		set the error_text to "Error: " & the error_number & ". " & the error_message
-		#		display dialog the error_text buttons {"Cancel"} default button 1
-		#	else
-		#		error number -128
-		#	end if
 		return choice
-		#end try
 	end choose_mydialog
 	
-	# text input dialog
+	# Input Str
 	to input_mydialog(tit, mess, buts, deans)
-		try
-			#tell application "Finder"
-			#		activate
-			set choice to display dialog mess buttons buts default button 2 default answer deans with title tit
-			set choose to item 2 of text of choice
-			set userean to item 1 of text of choice
-			return userean
-			#	end tell
-			
-		on error the error_message number the error_number
-			-- don't display error message if the user canceled a dialog within the [try] and [on error] lines above
-			if the error_number is not -128 then
-				set the error_text to "Error: " & the error_number & ". " & the error_message
-				display dialog the error_text buttons {"Cancel"} default button 1
-			else
-				error number -128
-			end if
-			return false
-		end try
-		return true
+		set choice to display dialog mess buttons buts default button 2 default answer deans with title tit
+		set choose to item 2 of text of choice
+		set keyword to item 1 of text of choice
+		return keyword
 	end input_mydialog
 	
-	# done or finish dialog
+	# Done or Finish
 	to d_done(mess)
-		try
-			display dialog mess buttons {"Done"} default button 1 with title "Result" with icon 2 giving up after 1
-			return button returned of result
-			
-		on error the error_message number the error_number
-			if the error_number is not -128 then
-				set the error_text to "Error: " & the error_number & ". " & the error_message
-				display dialog the error_text buttons {"Cancel"} default button 1
-			else
-				error number -128
-			end if
-		end try
-		
-		#default_d("Result", mess, {"Done"}, 1)
+		display dialog mess buttons {"Done"} default button 1 with title "Result" with icon 2 giving up after 1
+		return button returned of result
 	end d_done
 	
-	# EAN
-	# {"9784797336610: xxxxxxxx"}
+	# Get EAN {"9784797336610: xxxxxxxx"}
 	to get_ean(str)
-		set ean to (characters 1 thru 13 of item 1 of str) as string
+		set n to get_colon(str)
+		set ean to (characters 1 thru (n - 1) of item 1 of str) as string
 	end get_ean
 	
-	# Title
+	# Get Title
 	to get_title(str)
-		set title to (characters 16 thru end of item 1 of str) as string
+		set n to get_colon(str)
+		set title to (characters (n + 1) thru end of item 1 of str) as string
 	end get_title
+	
+	# Get :
+	to get_colon(str)
+		set n to offset of ":" in str
+	end get_colon
 	
 end script

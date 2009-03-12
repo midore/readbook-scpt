@@ -7,7 +7,7 @@ script class_list
 	end dialog_mine_admd
 	
 	
-	# CHOOSE SELECT FROM RIST 
+	# CHOOSE SELECT FROM LIST 
 	to dialog_select_item(ary, mydia)
 		set t to every paragraph of ary
 		if (count of t) is 1 then
@@ -54,7 +54,7 @@ script class_list
 		
 		# NOT User's Cancel
 		if selectitem is not false then
-			# OpenÅH get-EAN 
+			# Open
 			set ean to diallog_open(selectitem, d)
 			# Open run
 			runcommand("open", ean, bda) of comm
