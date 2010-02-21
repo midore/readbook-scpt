@@ -1,7 +1,7 @@
 scpt-for-readbook
 
 author: midorex@gmail.com
-URL: http://www.midore.net
+URL: http://midorex.blogspot.com
 
 # dependency
 
